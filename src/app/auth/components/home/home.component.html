@@ -1,0 +1,31 @@
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col" *ngFor="let data of prediction">
+        <div class="card shadow-sm">
+          <div>
+            <img src="{{ data.url }}" class="bd-placeholder-img card-img-top" />
+          </div>
+
+          <div class="card-body">
+            <p class="card-text">
+              {{ data.title }}
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary">
+                  View
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-secondary">
+                  Edit
+                </button>
+              </div>
+              <div></div>
+              <small class="text-muted">9 mins</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

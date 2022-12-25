@@ -1,0 +1,28 @@
+<!-- <input
+  class="form-control"
+  type="text"
+  [(ngModel)]="searchText"
+  placeholder="Search"
+/> -->
+<select [(ngModel)]="searchText">
+  <option value="0">--All--</option>
+  <option *ngFor="let summary of cacheForecasts" value="{{ summary.name }}">
+    {{ summary.name }}
+  </option>
+</select>
+<table class="table">
+  <tbody>
+    <tr>
+      <td></td>
+    </tr>
+    <tr *ngFor="let forecast of dropselect | filter : searchText">
+      <td>{{ forecast.id }}</td>
+      <td>{{ forecast.name }}</td>
+      <td>{{ forecast.username }}</td>
+      <td>{{ forecast.email }}</td>
+      <td>{{ forecast.address.street }}</td>
+      <td>{{ forecast.phone }}</td>
+      <td>{{ forecast.website }}</td>
+    </tr>
+  </tbody>
+</table>
